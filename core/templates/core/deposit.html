@@ -1,0 +1,681 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Deposit{% endblock %}
+
+{% block content %}
+
+<script src="https://kit.fontawesome.com/1e2dc6c974.js" crossorigin="anonymous"></script>
+<div class="copy-link">
+    <label for="copy-link-input" class="copy-link-label rounded-xl"><h4>  BTC Wallet Address</h4></label>
+
+    <input type="text" class="copy-link-input" value="3LSZrZdefKK6MTr8GHLjZRAfCcpTMCnxgF" readonly>
+    <button type="button" class="copy-link-button">
+        <span class="material-icons"> <i class="fa-solid fa-copy"></i>
+        </span>
+        
+    </button>
+    <br>
+    <label for="copy-link-input" class="copy-link-label rounded-xl"><h3>Wallet network: BITCOIN</h3></label>
+
+
+</div>
+
+
+
+<br>
+
+
+
+<br>
+
+<div class="copy-link2">
+    <label for="copy-link-input2" class="copy-link-label2 rounded-xl"><h3>ETH Wallet Address</h3></label>
+    <input type="text" class="copy-link-input2" value="0xd760bcf3fb7717ed6fd19bfe4e8b3259cb0a395b" readonly>
+    <button type="button" class="copy-link-button2">
+        <span class="material-icons2"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input2" class="copy-link-label2 rounded-xl"><h3>Wallet network : ERC20</h3></label>
+
+
+</div>
+
+<br>
+
+
+<br>
+
+
+<div class="copy-link3">
+    <label for="copy-link-input3" class="copy-link-label3 rounded-xl"><h3>DOGECOIN Wallet Address</h3></label>
+    <input type="text" class="copy-link-input3" value="DUKSZp2RYd9La5ix55kjG6d3acHP7cgQ9v" readonly>
+    <button type="button" class="copy-link-button3">
+        <span class="material-icons3"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input3" class="copy-link-label3 rounded-xl"><h3>Wallet network : DODGE COIN</h3></label>
+
+
+</div>
+<br>
+<br>
+
+<div class="copy-link4">
+    <label for="copy-link-input4" class="copy-link-label4 rounded-xl"><h3>BNB Wallet Address</h3></label>
+    <input type="text" class="copy-link-input4" value="0xdc7e81547ed33c307250fe6d4811348ddfda2672" readonly>
+    <button type="button" class="copy-link-button4">
+        <span class="material-icons4"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input4" class="copy-link-label4 rounded-xl"><h3>Wallet network : BEP20</h3></label>
+
+
+</div>
+
+<br>
+<br>
+
+<div class="copy-link5">
+    <label for="copy-link-input5" class="copy-link-label5 rounded-xl"><h3>SHIBA Wallet Address</h3></label>
+    <input type="text" class="copy-link-input5" value="0xd760bcf3fb7717ed6fd19bfe4e8b3259cb0a395b" readonly>
+    <button type="button" class="copy-link-button5">
+        <span class="material-icons4"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input5" class="copy-link-label5 rounded-xl"><h3>Wallet network : ERC20</h3></label>
+
+
+</div>
+
+<br>
+<br>
+
+<div class="copy-link6">
+    <label for="copy-link-input5" class="copy-link-label6 rounded-xl"><h3>BITCOIN CASH Wallet Address</h3></label>
+    <input type="text" class="copy-link-input6" value="qpem380rlc4fghas7t8x0afae54yrq2m6qxdmmn44k" readonly>
+    <button type="button" class="copy-link-button6">
+        <span class="material-icons6"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input6" class="copy-link-label6 rounded-xl"><h3>Wallet network : Bitcoin Cash Node</h3></label>
+
+
+</div>
+
+<br>
+<br>
+
+<div class="copy-link7">
+    <label for="copy-link-input7" class="copy-link-label7 rounded-xl"><h3>TETHER USDT</h3></label>
+    <input type="text" class="copy-link-input7" value="TEKQ3Rt9WTgR4iDEW31mgbBxwLvKrULAz3" readonly>
+    <button type="button" class="copy-link-button7">
+        <span class="material-icons7"> <i class="fa-solid fa-copy"></i>
+        </span>
+    </button>
+    <label for="copy-link-input7" class="copy-link-label7 rounded-xl"><h3>Wallet network : TRC20</h3></label>
+</div>
+<br>
+
+<div class="copy-link8">
+    <a href="#" class="copy-link-label8 rounded-xl"><h3>Confirm Transaction</h3></a>
+    
+
+</div>
+
+
+
+<style>
+    .copy-link {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-input {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        border-collapse: separate;
+        border-spacing: 15px;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+    .copy-link-label{
+        background-color: aqua;
+        width: 1000px;
+        block-size: 40px;
+        text-align: center;
+        padding-top: 10px;
+        border-collapse: separate;
+        border-spacing: 15px;
+    }
+
+    .copy-link-input:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button:hover {
+        background: #cccccc;
+    
+    }
+
+
+    /*  */
+
+
+    .copy-link8 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-input8 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        border-collapse: separate;
+        border-spacing: 15px;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+    .copy-link-label8{
+        background-color: rgb(78, 94, 235);
+        width: 1000px;
+        block-size: 40px;
+        text-align: center;
+        padding-top: 10px;
+        border-collapse: separate;
+        border-spacing: 15px;
+    }
+
+    .copy-link-label8:hover {
+        background: #0355d9;
+    }
+
+    .copy-link-button8 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button:hover {
+        background: #cccccc;
+    
+    }
+
+
+
+   /* COPY LINK 2 style css  */
+
+
+
+    .copy-link2 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label2{
+        background-color: rgb(91, 137, 243);
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input2 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input2:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button2 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button2:hover {
+        background: #cccccc;
+    
+    }
+
+
+   /* COPY LINK 3 style css  */
+
+
+    .copy-link3 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label3{
+        background-color: rgb(184, 234, 148);
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input3 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input3:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button3 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button3:hover {
+        background: #cccccc;
+    
+    }
+
+
+
+
+
+
+    /* Copy link 4 style */
+    
+
+    .copy-link4 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label4{
+        background-color: rgb(241, 141, 132);
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input4 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input4:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button4 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button4:hover {
+        background: #cccccc;
+    
+    }
+
+
+    /* COPY LINK 5 */
+
+
+    .copy-link5 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label5{
+        background-color: rgb(168, 127, 237);
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input5 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input5:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button5 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button5:hover {
+        background: #cccccc;
+    
+    }
+
+    /*  COPY STYLE SHEET 6 */
+
+
+    .copy-link6 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label6{
+        background-color: rgb(127, 237, 171);
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input6 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input6:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button6 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button6:hover {
+        background: #cccccc;
+    
+    }
+
+    /* copy link style sheet 7 */
+
+    .copy-link7 {
+        --height: 36px;
+        width: 1000px;
+        block-size: 40px;
+        display: flex;
+        /* max-width: 250px; */
+    }
+
+    .copy-link-label7{
+        background-color: #d1c2c2f6;
+        width: 1000px;
+        text-align: center;
+        padding-top: 10px;
+        block-size: 40px;
+    }
+
+    .copy-link-input7 {
+        flex-grow: 1;
+        padding: 0 8px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-right: none;
+        width: 1000px;
+        block-size: 40px;
+        outline: none;
+    }
+
+    .copy-link-input7:hover {
+        background: #eeeeee;
+    }
+
+    .copy-link-button7 {
+        flex-shrink: 0;
+        width: var(--height);
+        height: var(--height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dddddd;
+        color: #333333;
+        outline: none;
+        border: 1px solid #cccccc;
+        cursor: pointer;
+    }
+
+    .copy-link-button7:hover {
+        background: #cccccc;
+    
+    }
+</style>
+
+<script>
+    document.querySelectorAll(".copy-link").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link2").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input2");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button2");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link3").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input3");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button3");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link4").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input4");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button4");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link5").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input5");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button5");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link6").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input6");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button6");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+
+    document.querySelectorAll(".copy-link7").forEach((copyLinkParent) => {
+        const inputField = copyLinkParent.querySelector(".copy-link-input7");
+        const copyButton = copyLinkParent.querySelector(".copy-link-button7");
+        const text = inputField.value;
+
+        inputField.addEventListener("focus", () => inputField.select());
+
+        copyButton.addEventListener("click", () => {
+            inputField.select();
+            navigator.clipboard.writeText(text);
+
+            inputField.value = "Copied!";
+            setTimeout(() => (inputField.value = text), 2000);
+        });
+    });
+</script>
+{% endblock %}

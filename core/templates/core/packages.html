@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Packages{% endblock %}
+
+{% block content %}
+<link href="{% static 'css/stylesss.css' %}" rel="stylesheet">
+
+<div class=" take mt-6 px-6 py-12 bg-gray-100 roundedxl">
+    <!-- <h2 class="mb-12 text-2xl text-center">Newest Items</h2> -->
+
+    <div class="grid grid-cols-4 gap-4">
+        {% for package in packages %}
+        <div>
+            <a href="{% url 'deposit' %}">
+                <!-- <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    
+                </div> -->
+
+                <div class="p-6 bg-emerald-600 rounded-b-xl">
+                    <h2 class="text-white text-2xl text-align: center;">{{ package.name }}</h2>
+                    <i class="fa-sharp fa-solid fa-sack-dollar"></i>
+                    <h3>{{ package.description }}</h3>
+
+                    <p class="text-white">${{ package.price }}0</p>
+                </div>
+                
+                <a href="{% url 'core:deposit' %}" class="px-24 py-2 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 text-center items-center">Activate</a>
+
+
+
+            
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

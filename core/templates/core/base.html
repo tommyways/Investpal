@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/1e2dc6c974.js" crossorigin="anonymous"></script>
+    <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+
+    <!-- Favicons -->
+    <link href="{% static '/images/logog.png' %}" rel="icon">
+    <link href="{% static '/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+
+
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #d2e0f7;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 20px;
+          color: #2c2323;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <nav class="py-6 px-x flex justify-between items-center border-b border-gray-200 bg-emerald-400">
+        <!-- <a href="{% url 'user' %}" class="text-xl font-semibold">User</a> -->
+        {% if request.user.is_authenticated %}
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;Welcome {{ user.username }}</span>
+        <br>
+
+        {% else %}
+
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+        {% endif %}
+        <div class="space-x-6">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'transactions' %}" class="text-lg font-semibold hover:text-gray-500">Payments</a>
+            <!-- <a href="{% url 'deposit' %}" class="text-lg font-semibold hover:text-gray-500">Deposit</a> -->
+            
+            
+            <a href="{% url 'packages' %}" class="px-6 py-3 text-lg font-semibold bg-indigo-500 text-white rounded-xl hover:bg-teal-700">Invest</a>
+            
+
+            
+            <!-- <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Login</a><br> -->
+
+            {% endif %}
+
+
+        </div>
+    </nav>
+    {% endif %}
+
+
+
+
+
+    <body>
+      {% if request.user.is_authenticated %}
+      <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,eos,ethereum,litecoin,ripple,tether,tron,dogecoin,cardano,binancecoin,bitcoin-cash,polkadot,usd-coin,binance-usd,algorand,litecoin,dai,shiba-inu,chainlink,monero,stellar,solana,filecoin,vechain,near,aave,telos,the-sandbox,pancakeswap-token,optimism" currency="usd" background-color="#f7f3f3" locale="en"></coingecko-coin-price-marquee-widget>
+      {% endif %}
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          {% if request.user.is_authenticated %}
+          <a href="{% url 'user' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-house"></i>--- Home</a><br>
+          <a href="{% url 'core:profile' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-user"></i>--- Profile</a><br>
+          <a href="{% url 'transactions' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-table"></i>--- Transactions</a><br>
+          <a href="{% url 'packages' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-gift"></i>--- Packages</a><br>
+          <a href="{% url 'user' %}"class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-sharp fa-solid fa-network-wired"></i>--- My Downlines</a><br>
+          <a href="{% url 'core:inbox' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-inbox"></i>--- Inbox</a><br>
+          <a href="{% url 'deposit' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>--- Deposit</a> <br>
+          <a href="{% url 'core:contact' %}" class="px-6 py-3 text-lg font-semibold bg-emerald-400 text-white rounded-xl hover:bg-gray-700"><i class="fa-sharp fa-solid fa-wallet"></i>--- Withdraw</a> <br>
+
+
+          <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold bg-red-300 text-white rounded-xl hover:bg-gray-700"><i class="fa-solid fa-right-from-bracket"></i>Sign out</a>
+
+          {% else %}
+          <a href="{% url 'core:login' %}"class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Login</a><br>
+
+          {% endif %}
+
+          <br>
+        </div>
+        
+        <div id="main">
+          <!-- <h2></h2> -->
+          <!-- <p>Click on the element below to open the side navigation menu, and push this content to the right.</p> -->
+          <div class="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+            </div>
+          <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->
+        </div>
+
+                
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+           
+        
+       
+
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+            </script>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+</body>
+</html>
+

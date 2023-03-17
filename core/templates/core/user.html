@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+    <div class="mt-6 pr-4 py-12 bg-gray-100 roundedxl">
+        <!-- <h2 class="mb-12 text-2xl text-center">Newest Items</h2> -->
+
+        <div class="grid grid-cols-4 gap-4">
+            {% for category in categories %}
+            <div>
+                <a href="#">
+                    <!-- <div>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        
+                    </div> -->
+
+                    <div class="p-6 bg-emerald-600 rounded-b-xl">
+                        <h2 class="text-white text-2xl">{{ category.name }}</h2>
+                        <i class="fa-sharp fa-solid fa-sack-dollar"></i>
+
+                        <p class="text-white">${{ category.price }}0</p>
+                    </div>
+
+
+                
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <div class="container grid grid-cols-2 gap-2">
+        <div class="btcwdgt-chart"></div>
+        <div bw-cash="true" class="btcwdgt-chart"></div>
+    </div>
+
+
+    <script>
+        (function(b,i,t,C,O,I,N) {
+          window.addEventListener('load',function() {
+            if(b.getElementById(C))return;
+            I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+            I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+          },false)
+        })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+      </script>
+{% endblock %}

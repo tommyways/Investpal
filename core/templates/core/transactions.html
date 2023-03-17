@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+
+{% block content %}
+    <div class="payment-history-area bg-color fix area-padding-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-headline text-center">
+                        <!-- <p>As part of our transperancy policy we createed this system to automatically display the
+                            latest deposit
+                            and withdrawal.</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="deposite-content">
+                        <div class="diposite-box">
+                            <h4>Transactions History</h4>
+                            <span><i class="flaticon-005-savings"></i></span>
+                            <i class='bx bxs-wallet'></i>
+                            <div class="deposite-table">
+
+                                <table>
+                                    <tr>
+                                        <th>Amount(USD)</th>
+                                        
+                                        <th>Status</th>
+                                        
+                                        <th>Tnx Id</th>
+                                        
+                                        <th>Date</th>
+                                        
+                                        <th>Currency</th>
+                                    </tr>
+                                    <tr>
+                                        <td>null</td>
+
+                                        <td>null</td>
+
+                                        <td>null</td>
+
+                                        <td>null</td>
+
+                                        <td>null</td>
+
+
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
