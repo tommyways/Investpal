@@ -23,6 +23,14 @@ class SignupForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2', 'country','first_name','last_name')
 
     
+    first_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'First name',
+        'class': 'w-full py-4 px-4 px-6 rounded-xl'
+    }))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Last name',
+        'class': 'w-full py-4 px-4 px-6 rounded-xl'
+    }))
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Username',
         'class': 'w-full py-4 px-4 px-6 rounded-xl'
@@ -39,12 +47,8 @@ class SignupForm(UserCreationForm):
         'placeholder': ' Confirm Password',
         'class': 'w-full py-4 px-4 px-6 rounded-xl'
     }))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'First name',
-        'class': 'w-full py-4 px-4 px-6 rounded-xl'
-    }))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Last name',
+    phone = forms.IntegerField(widget=forms.NumberInput(attrs={
+        'placeholder': ' Phone Number',
         'class': 'w-full py-4 px-4 px-6 rounded-xl'
     }))
     country = forms.CharField(widget=forms.TextInput)
@@ -84,9 +88,23 @@ class UpdateUserForm(forms.ModelForm):
 
                              }))
 
+    first_name = forms.CharField(required=True,
+                             widget=forms.TextInput(attrs={
+                                'placeholder': "First Name",
+                                'class': 'w-full py-4 px-4 px-6 rounded-xl bg-blue-200'
+
+                             }))
+
+    last_name = forms.CharField(required=True,
+                             widget=forms.TextInput(attrs={
+                                'placeholder': "Last Name",
+                                'class': 'w-full py-4 px-4 px-6 rounded-xl bg-blue-200'
+
+                             }))
+
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username', 'email','first_name', 'last_name']
 
 
 class UpdateProfileForm(forms.ModelForm):

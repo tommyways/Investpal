@@ -21,7 +21,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import PasswordResetForm
 
 
-from currency.models import Category, Package
+from currency.models import Category, Package, Balance
 
 # Create your views here.
 from .forms import SignupForm
@@ -81,7 +81,20 @@ def login(request):
 @login_required
 def user(request):
     packages = Package.objects.all()
-    categories = Category.objects.all()
+    
+    try:
+        categories = Category.objects.get(user=request.user)
+    
+    except Category.DoesNotExist:
+        categories = None
+
+
+    try:
+        balance = Balance.objects.get(user=request.user)
+    
+    except Balance.DoesNotExist:
+        balance = None
+
 
     return render(
         request,
@@ -89,6 +102,8 @@ def user(request):
         {
             "categories": categories,
             "packages": packages,
+            "balance": balance,
+
         },
     )
 
@@ -181,8 +196,11 @@ def profile(request):
 
 @login_required
 def userhome(request):
+    user = request.user
     packages = Package.objects.all()
     categories = Category.objects.all()
+    balance = Balance.objects.all()
+    user.refresh_from_db()
 
     return render(
         request,
@@ -190,6 +208,7 @@ def userhome(request):
         {
             "categories": categories,
             "packages": packages,
+            "balance": balance,
         },
     )
 

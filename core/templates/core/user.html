@@ -1,37 +1,42 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}Dashboard{% endblock %}
 
 
 {% block content %}
-    <div class="mt-6 pr-4 py-12 bg-gray-100 roundedxl">
-        <!-- <h2 class="mb-12 text-2xl text-center">Newest Items</h2> -->
-
-        <div class="grid grid-cols-4 gap-4">
-            {% for category in categories %}
-            <div>
-                <a href="#">
-                    <!-- <div>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        
-                    </div> -->
-
-                    <div class="p-6 bg-emerald-600 rounded-b-xl">
-                        <h2 class="text-white text-2xl">{{ category.name }}</h2>
-                        <i class="fa-sharp fa-solid fa-sack-dollar"></i>
-
-                        <p class="text-white">${{ category.price }}0</p>
-                    </div>
-
-
-                
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-        
+<style type="text/css">
+    p{
+    padding: 7px;
+    text-align: center; }
+    h2{
+      text-align: center;
+    }
+    .left{
+    width: 25%;
+    float: left; }
+    .right{
+    width: 25%;
+    float: right; }
+    .big{
+    width: 25%;
+    left: 50%; }
+    </style>
+    </head>
+    <body>
+    <div class="left p-6 bg-emerald-600 rounded-b-xl"> 
+      <h2 class="text-decoration-line: underline; text-white font-extrabold text-3xl">Wallet Balance</h2><hr>
+      <p class="text-black font-extrabold text-3xl">${{ categories.price }}</p>
+    </div>
+    
+    <div class="right p-6 bg-emerald-600 rounded-b-xl">
+      <h2 class="text-decoration-line: underline; text-white font-extrabold text-3xl">Profit Earned</h2><hr>
+      <p class="text-black font-extrabold text-3xl">${{ categories.profit }} </p>
     </div>
 
+    
+    
+    </div>
     <div class="container grid grid-cols-2 gap-2">
         <div class="btcwdgt-chart"></div>
         <div bw-cash="true" class="btcwdgt-chart"></div>

@@ -11,3 +11,32 @@
 .take i{
     text-align: center;
 }  
+
+
+.row h2{
+    text-align: center;
+}
+.row p{
+    text-align: center;
+}
+.bigboy i{
+    align-items: center;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 150px; /* Should be removed. Only for demonstration */
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+.row{
+    box-sizing: border-box;
+    border-collapse: separate;
+    border-spacing: 15px;
+}
